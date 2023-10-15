@@ -3,7 +3,8 @@ module "repo_fake_geolocation" {
   name        = "fake-geolocation"
   description = "A fake implementation of the W3C Geolocation API"
 
-  ci_workflows = ["node-library"]
+  ci_workflows              = ["node-library"]
+  publish_package_workflows = ["npm"]
 }
 
 import {
@@ -23,6 +24,9 @@ module "repo_fake_geolocation_demo" {
   homepage_url = "https://fake-geolocation-demo.vercel.app"
 
   ci_workflows = ["node-library"]
+
+  has_discussions         = true
+  has_release_discussions = true
 }
 
 module "repo_fake_permissions" {
@@ -30,7 +34,11 @@ module "repo_fake_permissions" {
   name        = "fake-permissions"
   description = "A fake implementation of the W3C Permissions API"
 
-  ci_workflows = ["node-library"]
+  ci_workflows              = ["node-library"]
+  publish_package_workflows = ["npm"]
+
+  has_discussions         = true
+  has_release_discussions = true
 }
 
 import {
@@ -48,6 +56,8 @@ module "repo_nvector_js" {
   name         = "nvector-js"
   description  = "A suite of tools for solving geographical position calculations"
   homepage_url = "https://npmjs.com/package/nvector-geodesy"
+
+  publish_package_workflows = ["npm"]
 
   has_discussions         = true
   has_release_discussions = true

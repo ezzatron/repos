@@ -32,6 +32,23 @@ resource "github_repository_file" "dot_github_workflows_ci_scheduled_yml" {
   })
 }
 
+resource "github_repository_file" "dot_github_workflows_publish_package_yml" {
+  for_each = toset(var.publish_package_workflows)
+
+  commit_author       = module.constants.committer.name
+  commit_email        = module.constants.committer.email
+  repository          = github_repository.this.name
+  file                = ".github/workflows/publish-package-${each.value}.yml"
+  commit_message      = "Update \"Publish package\" GHA workflow"
+  overwrite_on_create = true
+
+  content = templatefile("dot-github/workflows/publish-package.yml", {
+    package_type = each.value
+    org          = module.constants.org
+    org_name     = module.constants.org_name
+  })
+}
+
 resource "github_repository_file" "dot_github_workflows_publish_release_yml" {
   for_each = toset(var.has_publish_release_workflow ? ["basic"] : [])
 
