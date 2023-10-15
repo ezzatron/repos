@@ -8,9 +8,10 @@ module "repo_fake_geolocation_demo" {
 }
 
 module "repo_nvector_js" {
-  source      = "./modules/repo"
-  name        = "nvector-js"
-  description = "A suite of tools for solving geographical position calculations"
+  source       = "./modules/repo"
+  name         = "nvector-js"
+  description  = "A suite of tools for solving geographical position calculations"
+  homepage_url = "https://npmjs.com/package/nvector-geodesy"
 
   has_discussions         = true
   has_release_discussions = true
