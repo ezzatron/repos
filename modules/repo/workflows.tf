@@ -47,7 +47,6 @@ resource "github_repository_file" "dot_github_workflows_publish_release_yml" {
     make_target             = var.release_make_target == null ? "" : var.release_make_target
     org                     = module.constants.org
     org_name                = module.constants.org_name
-    use_release_action_main = var.use_release_action_main
   })
 }
 
@@ -66,6 +65,5 @@ resource "github_repository_file" "dot_github_workflows_publish_release_manual_y
     make_target             = var.release_make_target == null ? "" : var.release_make_target
     org                     = module.constants.org
     org_name                = module.constants.org_name
-    use_release_action_main = var.use_release_action_main
   })
 }
