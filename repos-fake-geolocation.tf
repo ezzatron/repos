@@ -5,9 +5,6 @@ module "repo_fake_geolocation_demo" {
   homepage_url = "https://fake-geolocation-demo.vercel.app"
 
   ci_workflows = ["node-library"]
-
-  has_discussions         = true
-  has_release_discussions = true
 }
 
 module "repo_nvector_js" {
