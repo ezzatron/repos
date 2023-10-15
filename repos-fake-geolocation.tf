@@ -17,12 +17,18 @@ module "repo_nvector_js" {
   has_release_discussions = true
 }
 
-import {
-  to = module.repo_nvector_js.github_repository.this
-  id = "nvector-js"
+module "repo_nvector_test_api" {
+  source      = "./modules/repo"
+  name        = "nvector-test-api"
+  description = "A simple WebSocket-based API for calling functions from the Python nvector package"
 }
 
 import {
-  to = module.repo_nvector_js.github_branch_protection.default_branch
-  id = "nvector-js:main"
+  to = module.repo_nvector_test_api.github_repository.this
+  id = "nvector-test-api"
 }
+
+# import {
+#   to = module.repo_nvector_test_api.github_branch_protection.default_branch
+#   id = "nvector-test-api:main"
+# }
