@@ -9,7 +9,6 @@ resource "github_repository_file" "dot_github_renovate_json" {
   overwrite_on_create = true
 
   content = templatefile("dot-github/renovate.json", {
-    post_upgrade_command = var.renovate_post_upgrade_command
-    org                  = module.constants.org
+    org = module.constants.org
   })
 }

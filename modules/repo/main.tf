@@ -59,12 +59,7 @@ resource "github_branch_protection" "default_branch" {
   enforce_admins = true
 }
 
-data "github_team" "renovate_reviewers" {
-  slug = "renovate-reviewers"
-}
-
-resource "github_team_repository" "renovate_reviewers" {
-  team_id    = data.github_team.renovate_reviewers.id
+resource "github_repository_dependabot_security_updates" "this" {
   repository = github_repository.this.name
-  permission = "maintain"
+  enabled    = false
 }

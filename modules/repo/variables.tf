@@ -60,12 +60,6 @@ variable "manage_renovate" {
   default     = true
 }
 
-variable "renovate_post_upgrade_command" {
-  description = "The Renovate post-upgrade command to use"
-  type        = string
-  default     = null
-}
-
 variable "has_actions" {
   description = "Whether the repository has GitHub Actions enabled"
   type        = bool
