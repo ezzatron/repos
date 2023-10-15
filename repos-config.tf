@@ -17,8 +17,3 @@ module "repo_renovate" {
   has_publish_release_workflow = false
   manage_renovate              = false
 }
-
-import {
-  to = module.repo_renovate.github_repository.this
-  id = "renovate"
-}
