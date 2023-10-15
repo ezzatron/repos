@@ -60,6 +60,12 @@ variable "has_publish_release_workflow" {
   default     = true
 }
 
+variable "has_renovate" {
+  description = "Whether the repository uses Renovate"
+  type        = bool
+  default     = true
+}
+
 variable "manage_renovate" {
   description = "Whether to manage the Renovate configuration"
   type        = bool

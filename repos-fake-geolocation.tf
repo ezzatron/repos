@@ -7,16 +7,6 @@ module "repo_fake_geolocation" {
   publish_package_workflows = ["npm"]
 }
 
-import {
-  to = module.repo_fake_geolocation.github_repository.this
-  id = "fake-geolocation"
-}
-
-import {
-  to = module.repo_fake_geolocation.github_branch_protection.default_branch
-  id = "fake-geolocation:main"
-}
-
 module "repo_fake_geolocation_demo" {
   source       = "./modules/repo"
   name         = "fake-geolocation-demo"
@@ -39,16 +29,6 @@ module "repo_fake_permissions" {
 
   has_discussions         = true
   has_release_discussions = true
-}
-
-import {
-  to = module.repo_fake_permissions.github_repository.this
-  id = "fake-permissions"
-}
-
-import {
-  to = module.repo_fake_permissions.github_branch_protection.default_branch
-  id = "fake-permissions:main"
 }
 
 module "repo_nvector_js" {

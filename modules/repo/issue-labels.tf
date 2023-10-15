@@ -5,6 +5,8 @@ locals {
 }
 
 resource "github_issue_label" "renovate" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "renovate"
   description = "Pull requests created by Renovate"
@@ -12,6 +14,8 @@ resource "github_issue_label" "renovate" {
 }
 
 resource "github_issue_label" "github_actions" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "github-actions"
   description = "Pull requests that update GitHub Actions dependencies"
@@ -19,6 +23,8 @@ resource "github_issue_label" "github_actions" {
 }
 
 resource "github_issue_label" "npm" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "npm"
   description = "Pull requests that update NPM dependencies"
@@ -26,6 +32,8 @@ resource "github_issue_label" "npm" {
 }
 
 resource "github_issue_label" "terraform" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "terraform"
   description = "Pull requests that update Terraform dependencies"
@@ -33,6 +41,8 @@ resource "github_issue_label" "terraform" {
 }
 
 resource "github_issue_label" "major" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "major"
   description = "Pull requests that update major dependency versions"
@@ -40,6 +50,8 @@ resource "github_issue_label" "major" {
 }
 
 resource "github_issue_label" "non_major" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "non-major"
   description = "Pull requests that update non-major dependency versions"
@@ -47,6 +59,8 @@ resource "github_issue_label" "non_major" {
 }
 
 resource "github_issue_label" "non_dev" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "non-dev"
   description = "Pull requests that update non-dev dependencies"
@@ -54,6 +68,8 @@ resource "github_issue_label" "non_dev" {
 }
 
 resource "github_issue_label" "dev" {
+  count = var.has_renovate ? 1 : 0
+
   repository  = github_repository.this.name
   name        = "dev"
   description = "Pull requests that update dev dependencies"
