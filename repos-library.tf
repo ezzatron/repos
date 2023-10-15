@@ -9,13 +9,3 @@ module "repo_austenite" {
   has_discussions         = true
   has_release_discussions = true
 }
-
-import {
-  to = module.repo_austenite.github_repository.this
-  id = "austenite"
-}
-
-import {
-  to = module.repo_austenite.github_branch_protection.default_branch
-  id = "austenite:main"
-}
