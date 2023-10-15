@@ -18,5 +18,5 @@ output "org" {
 
 output "org_name" {
   description = "The GitHub organization's display name"
-  value       = "ezzatron"
+  value       = "Ezzatron"
 }
