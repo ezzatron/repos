@@ -7,13 +7,3 @@ module "repo_dotfiles" {
   has_renovate                 = false
   has_publish_release_workflow = false
 }
-
-import {
-  to = module.repo_dotfiles.github_repository.this
-  id = "dotfiles"
-}
-
-import {
-  to = module.repo_dotfiles.github_branch_protection.default_branch
-  id = "dotfiles:main"
-}
