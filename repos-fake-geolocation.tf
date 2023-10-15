@@ -15,8 +15,6 @@ module "repo_nvector_js" {
   name        = "nvector-js"
   description = "A suite of tools for solving geographical position calculations"
 
-  ci_workflows = ["node-library"]
-
   has_discussions         = true
   has_release_discussions = true
 }
