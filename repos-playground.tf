@@ -7,13 +7,3 @@ module "repo_mapbox_playground" {
   has_renovate                 = false
   has_publish_release_workflow = false
 }
-
-import {
-  to = module.repo_mapbox_playground.github_repository.this
-  id = "mapbox-playground"
-}
-
-# import {
-#   to = module.repo_mapbox_playground.github_branch_protection.default_branch
-#   id = "mapbox-playground:main"
-# }
