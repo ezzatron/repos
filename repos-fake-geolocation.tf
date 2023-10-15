@@ -1,3 +1,21 @@
+module "repo_fake_geolocation" {
+  source      = "./modules/repo"
+  name        = "fake-geolocation"
+  description = "A fake implementation of the W3C Geolocation API"
+
+  ci_workflows = ["node-library"]
+}
+
+import {
+  to = module.repo_fake_geolocation.github_repository.this
+  id = "fake-geolocation"
+}
+
+import {
+  to = module.repo_fake_geolocation.github_branch_protection.default_branch
+  id = "fake-geolocation:main"
+}
+
 module "repo_fake_geolocation_demo" {
   source       = "./modules/repo"
   name         = "fake-geolocation-demo"
@@ -5,6 +23,24 @@ module "repo_fake_geolocation_demo" {
   homepage_url = "https://fake-geolocation-demo.vercel.app"
 
   ci_workflows = ["node-library"]
+}
+
+module "repo_fake_permissions" {
+  source      = "./modules/repo"
+  name        = "fake-permissions"
+  description = "A fake implementation of the W3C Permissions API"
+
+  ci_workflows = ["node-library"]
+}
+
+import {
+  to = module.repo_fake_permissions.github_repository.this
+  id = "fake-permissions"
+}
+
+import {
+  to = module.repo_fake_permissions.github_branch_protection.default_branch
+  id = "fake-permissions:main"
 }
 
 module "repo_nvector_js" {
@@ -22,13 +58,3 @@ module "repo_nvector_test_api" {
   name        = "nvector-test-api"
   description = "A simple WebSocket-based API for calling functions from the Python nvector package"
 }
-
-import {
-  to = module.repo_nvector_test_api.github_repository.this
-  id = "nvector-test-api"
-}
-
-# import {
-#   to = module.repo_nvector_test_api.github_branch_protection.default_branch
-#   id = "nvector-test-api:main"
-# }
