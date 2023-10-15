@@ -57,8 +57,6 @@ module "repo_nvector_js" {
   description  = "A suite of tools for solving geographical position calculations"
   homepage_url = "https://npmjs.com/package/nvector-geodesy"
 
-  publish_package_workflows = ["npm"]
-
   has_discussions         = true
   has_release_discussions = true
 }
