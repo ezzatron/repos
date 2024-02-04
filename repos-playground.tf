@@ -9,9 +9,10 @@ module "repo_mapbox_playground" {
 }
 
 module "repo_swipe_docs" {
-  source      = "./modules/repo"
-  name        = "swipe-docs"
-  description = "A re-creation of the docs site of a very popular online payments service"
+  source       = "./modules/repo"
+  name         = "swipe-docs"
+  description  = "A re-creation of the docs site of a very popular online payments service"
+  homepage_url = "https://swipe-docs.vercel.app"
 
   has_publish_release_workflow = false
 }
