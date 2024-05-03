@@ -35,7 +35,9 @@ module "repo_nvector_js" {
   source       = "./modules/repo"
   name         = "nvector-js"
   description  = "A suite of tools for solving geographical position calculations"
-  homepage_url = "https://npmjs.com/package/nvector-geodesy"
+  homepage_url = "https://ezzatron.com/nvector-js"
+
+  pages_branch = "gh-pages"
 
   has_discussions         = true
   has_release_discussions = true
