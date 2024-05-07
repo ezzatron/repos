@@ -34,7 +34,7 @@ module "repo_fake_permissions" {
 module "repo_nvector_js" {
   source       = "./modules/repo"
   name         = "nvector-js"
-  description  = "A suite of tools for solving geographical position calculations"
+  description  = "Functions for performing geographical position calculations using n-vectors"
   homepage_url = "https://ezzatron.com/nvector-js"
 
   pages_branch = "gh-pages"
