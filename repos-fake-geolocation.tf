@@ -31,6 +31,15 @@ module "repo_fake_permissions" {
   has_release_discussions = true
 }
 
+module "repo_nvector_go" {
+  source      = "./modules/repo"
+  name        = "nvector-go"
+  description = "Functions for performing geographical position calculations using n-vectors"
+
+  has_discussions         = true
+  has_release_discussions = true
+}
+
 module "repo_nvector_js" {
   source       = "./modules/repo"
   name         = "nvector-js"
