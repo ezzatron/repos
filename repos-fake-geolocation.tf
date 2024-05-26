@@ -32,9 +32,10 @@ module "repo_fake_permissions" {
 }
 
 module "repo_nvector_go" {
-  source      = "./modules/repo"
-  name        = "nvector-go"
-  description = "Functions for performing geographical position calculations using n-vectors"
+  source       = "./modules/repo"
+  name         = "nvector-go"
+  description  = "Functions for performing geographical position calculations using n-vectors"
+  homepage_url = "https://pkg.go.dev/github.com/ezzatron/nvector-go"
 
   has_discussions         = true
   has_release_discussions = true
