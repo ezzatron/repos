@@ -11,9 +11,10 @@ module "repo_austenite" {
 }
 
 module "repo_isomorphic_msw" {
-  source      = "./modules/repo"
-  name        = "isomorphic-msw"
-  description = "MSW with the same API for Node.js and browsers"
+  source       = "./modules/repo"
+  name         = "isomorphic-msw"
+  description  = "MSW with the same API for Node.js and browsers"
+  homepage_url = "https://ezzatron.com/isomorphic-msw"
 
   ci_workflows              = ["node-library"]
   publish_package_workflows = ["npm"]
