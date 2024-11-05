@@ -1,7 +1,7 @@
 module "repo_austenite" {
   source      = "./modules/repo"
   name        = "austenite"
-  description = "Declarative environment variables for Node.js"
+  description = "Declarative environment variables for TypeScript"
 
   has_discussions         = true
   has_release_discussions = true
