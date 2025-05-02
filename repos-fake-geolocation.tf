@@ -1,7 +1,10 @@
 module "repo_fake_geolocation" {
-  source      = "./modules/repo"
-  name        = "fake-geolocation"
-  description = "A fake implementation of the W3C Geolocation API"
+  source       = "./modules/repo"
+  name         = "fake-geolocation"
+  description  = "A fake implementation of the W3C Geolocation API"
+  homepage_url = "https://ezzatron.com/fake-geolocation"
+
+  pages_branch = "gh-pages"
 
   ci_workflows              = ["node-library"]
   publish_package_workflows = ["npm"]
@@ -20,12 +23,15 @@ module "repo_fake_geolocation_demo" {
 }
 
 module "repo_fake_permissions" {
-  source      = "./modules/repo"
-  name        = "fake-permissions"
-  description = "A fake implementation of the W3C Permissions API"
+  source       = "./modules/repo"
+  name         = "fake-permissions"
+  description  = "A fake implementation of the W3C Permissions API"
+  homepage_url = "https://ezzatron.com/fake-permissions"
 
   ci_workflows              = ["node-library"]
   publish_package_workflows = ["npm"]
+
+  pages_branch = "gh-pages"
 
   has_discussions         = true
   has_release_discussions = true
