@@ -6,8 +6,7 @@ module "repo_fake_geolocation" {
 
   pages_branch = "gh-pages"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_fake_geolocation_demo" {
@@ -16,8 +15,7 @@ module "repo_fake_geolocation_demo" {
   description  = "Demonstrates the features of the fake-geolocation package"
   homepage_url = "https://fake-geolocation-demo.vercel.app"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_fake_permissions" {
@@ -28,8 +26,7 @@ module "repo_fake_permissions" {
 
   pages_branch = "gh-pages"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_nvector_go" {
@@ -38,8 +35,7 @@ module "repo_nvector_go" {
   description  = "Functions for performing geographical position calculations using n-vectors"
   homepage_url = "https://pkg.go.dev/github.com/ezzatron/nvector-go"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_nvector_js" {
@@ -50,8 +46,7 @@ module "repo_nvector_js" {
 
   pages_branch = "gh-pages"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_nvector_test_api" {

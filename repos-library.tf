@@ -3,8 +3,7 @@ module "repo_austenite" {
   name        = "austenite"
   description = "Declarative environment variables for TypeScript"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
 
 module "repo_isomorphic_msw" {
@@ -15,6 +14,5 @@ module "repo_isomorphic_msw" {
 
   pages_branch = "gh-pages"
 
-  has_discussions         = true
-  has_release_discussions = true
+  has_discussions = true
 }
