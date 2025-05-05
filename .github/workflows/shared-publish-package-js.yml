@@ -1,0 +1,48 @@
+on:
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: Publish JavaScript package
+
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine platforms
+        id: platforms
+        run: |
+          if [ -f jsr.json ]; then echo "jsr=true" >> "$GITHUB_OUTPUT"; fi
+          if [ -f package.json ]; then echo "npm=true" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: make link-dependencies
+
+      - name: Make
+        run: make ci
+
+      - name: Set package version
+        run: make set-package-version
+
+      - name: Publish package to JSR
+        if: success() && steps.platforms.outputs.jsr == 'true'
+        run: npx --yes jsr publish --allow-dirty
+
+      - name: Publish package to npm
+        if: success() && steps.platforms.outputs.npm == 'true'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
