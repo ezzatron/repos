@@ -42,24 +42,6 @@ variable "pages_branch" {
   default     = null
 }
 
-variable "ci_workflows" {
-  description = "The GitHub Actions CI workflows to use"
-  type        = list(string)
-  default     = []
-}
-
-variable "publish_package_workflows" {
-  description = "The GitHub Actions package publishing workflows to use"
-  type        = list(string)
-  default     = []
-}
-
-variable "has_publish_release_workflow" {
-  description = "Whether to add a basic GitHub Actions release publishing workflow"
-  type        = bool
-  default     = true
-}
-
 variable "has_renovate" {
   description = "Whether the repository uses Renovate"
   type        = bool

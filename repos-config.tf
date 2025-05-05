@@ -3,9 +3,8 @@ module "repo_dotfiles" {
   name        = "dotfiles"
   description = "My personal dotfiles"
 
-  has_actions                  = false
-  has_renovate                 = false
-  has_publish_release_workflow = false
+  has_actions  = false
+  has_renovate = false
 }
 
 module "repo_renovate" {
@@ -14,6 +13,5 @@ module "repo_renovate" {
   description  = "Self-hosted Renovate"
   homepage_url = "https://github.com/ezzatron/renovate/actions/workflows/renovate.yml"
 
-  has_publish_release_workflow = false
-  manage_renovate              = false
+  manage_renovate = false
 }

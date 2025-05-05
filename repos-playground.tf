@@ -3,9 +3,8 @@ module "repo_mapbox_playground" {
   name        = "mapbox-playground"
   description = "A playground repo for Mapbox"
 
-  has_actions                  = false
-  has_renovate                 = false
-  has_publish_release_workflow = false
+  has_actions  = false
+  has_renovate = false
 }
 
 module "repo_swipe_docs" {
@@ -13,6 +12,4 @@ module "repo_swipe_docs" {
   name         = "swipe-docs"
   description  = "A re-creation of the docs site of a very popular online payments service"
   homepage_url = "https://swipe-docs.vercel.app"
-
-  has_publish_release_workflow = false
 }

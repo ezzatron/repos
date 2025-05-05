@@ -5,9 +5,6 @@ module "repo_austenite" {
 
   has_discussions         = true
   has_release_discussions = true
-
-  ci_workflows              = ["node-library"]
-  publish_package_workflows = ["npm"]
 }
 
 module "repo_isomorphic_msw" {
@@ -20,7 +17,4 @@ module "repo_isomorphic_msw" {
 
   has_discussions         = true
   has_release_discussions = true
-
-  ci_workflows              = ["node-library"]
-  publish_package_workflows = ["npm"]
 }
