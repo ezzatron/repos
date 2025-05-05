@@ -5,6 +5,9 @@ module "repo_fake_geolocation" {
   homepage_url = "https://ezzatron.com/fake-geolocation"
 
   pages_branch = "gh-pages"
+
+  has_discussions         = true
+  has_release_discussions = true
 }
 
 module "repo_fake_geolocation_demo" {
