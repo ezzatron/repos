@@ -7,9 +7,12 @@ module "repo_austenite" {
 }
 
 module "repo_impasto" {
-  source      = "./modules/repo"
-  name        = "impasto"
-  description = "Syntax highlighting tools built for wooorm/starry-night"
+  source       = "./modules/repo"
+  name         = "impasto"
+  description  = "Syntax highlighting tools built for wooorm/starry-night"
+  homepage_url = "https://ezzatron.com/impasto"
+
+  pages_branch = "gh-pages"
 
   has_discussions = true
 }
