@@ -6,6 +6,14 @@ module "repo_austenite" {
   has_discussions = true
 }
 
+module "repo_impasto" {
+  source      = "./modules/repo"
+  name        = "impasto"
+  description = "Syntax highlighting tools built for wooorm/starry-night"
+
+  has_discussions = true
+}
+
 module "repo_isomorphic_msw" {
   source       = "./modules/repo"
   name         = "isomorphic-msw"
