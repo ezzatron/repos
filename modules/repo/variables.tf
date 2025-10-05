@@ -65,9 +65,3 @@ variable "has_discussions" {
   type        = bool
   default     = false
 }
-
-variable "release_make_target" {
-  description = "The make target to run before publishing releases"
-  type        = string
-  default     = null
-}
