@@ -3,5 +3,6 @@ module "repo_nextjs_starter" {
   name        = "nextjs-starter"
   description = "A batteries-included starter template for Next.js"
 
-  is_template = true
+  is_template     = true
+  manage_renovate = false
 }
