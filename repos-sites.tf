@@ -4,4 +4,6 @@ module "repo_erin_id_au" {
   description = "Source for erin.id.au"
 
   homepage_url = "https://erin.id.au"
+
+  manage_renovate = false
 }
