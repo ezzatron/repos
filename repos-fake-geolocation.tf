@@ -1,3 +1,20 @@
+locals {
+  nvector_topics = [
+    "coordinates",
+    "distance-calculation",
+    "geodesy-functions",
+    "geodesy",
+    "geographical-positions",
+    "geography",
+    "great-circle-distance",
+    "great-circle",
+    "midpoint",
+    "n-vector",
+    "points",
+    "position-calculation",
+    "wgs84",
+  ]
+}
 module "repo_fake_geolocation" {
   source       = "./modules/repo"
   name         = "fake-geolocation"
@@ -34,6 +51,7 @@ module "repo_nvector_go" {
   name         = "nvector-go"
   description  = "Functions for performing geographical position calculations using n-vectors"
   homepage_url = "https://pkg.go.dev/github.com/ezzatron/nvector-go"
+  topics       = local.nvector_topics
 
   has_discussions = true
 }
@@ -43,6 +61,7 @@ module "repo_nvector_js" {
   name         = "nvector-js"
   description  = "Functions for performing geographical position calculations using n-vectors"
   homepage_url = "https://ezzatron.com/nvector-js"
+  topics       = local.nvector_topics
 
   pages_branch = "gh-pages"
 
