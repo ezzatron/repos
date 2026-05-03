@@ -15,3 +15,12 @@ module "repo_renovate" {
 
   manage_renovate = false
 }
+
+module "repo_skills" {
+  source      = "./modules/repo"
+  name        = "skills"
+  description = "My personal agent skills"
+
+  has_actions  = false
+  has_renovate = false
+}
