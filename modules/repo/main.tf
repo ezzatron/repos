@@ -34,20 +34,11 @@ resource "github_repository" "this" {
   }
 }
 
-import {
-  to = github_repository_vulnerability_alerts.this
-  id = var.name
-}
 resource "github_repository_vulnerability_alerts" "this" {
   repository = github_repository.this.name
   enabled    = true
 }
 
-import {
-  for_each = var.pages_branch == null ? {} : { pages = var.pages_branch }
-  to       = github_repository_pages.this
-  id       = github_repository.this.name
-}
 resource "github_repository_pages" "this" {
   for_each = var.pages_branch == null ? {} : { pages = var.pages_branch }
 
