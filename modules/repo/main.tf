@@ -16,7 +16,6 @@ resource "github_repository" "this" {
 
   allow_auto_merge       = false
   delete_branch_on_merge = true
-  vulnerability_alerts   = true
 
   dynamic "template" {
     for_each = var.template == null ? [] : [null]
@@ -27,14 +26,28 @@ resource "github_repository" "this" {
     }
   }
 
-  dynamic "pages" {
-    for_each = var.pages_branch == null ? [] : [null]
+  lifecycle {
+    ignore_changes = [
+      pages,
+      vulnerability_alerts,
+    ]
+  }
+}
 
-    content {
-      source {
-        branch = var.pages_branch
-      }
-    }
+resource "github_repository_vulnerability_alerts" "this" {
+  repository = github_repository.this.name
+  enabled    = true
+}
+
+resource "github_repository_pages" "this" {
+  for_each = var.pages_branch == null ? {} : { pages = var.pages_branch }
+
+  repository = github_repository.this.name
+  build_type = "legacy"
+
+  source {
+    branch = each.value
+    path   = "/"
   }
 }
 
