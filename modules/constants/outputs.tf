@@ -75,7 +75,13 @@ output "issue_labels" {
 
     npm = {
       name        = "npm"
-      description = "Pull requests that update NPM dependencies"
+      description = "Pull requests that update npm dependencies"
+      color       = local.issue_label_color_renovate
+    }
+
+    nvm = {
+      name        = "nvm"
+      description = "Pull requests that update nvm versions"
       color       = local.issue_label_color_renovate
     }
 
