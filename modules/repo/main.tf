@@ -16,7 +16,6 @@ resource "github_repository" "this" {
 
   allow_auto_merge       = false
   delete_branch_on_merge = true
-  vulnerability_alerts   = true
 
   dynamic "template" {
     for_each = var.template == null ? [] : [null]
@@ -36,6 +35,21 @@ resource "github_repository" "this" {
       }
     }
   }
+
+  lifecycle {
+    ignore_changes = [
+      vulnerability_alerts,
+    ]
+  }
+}
+
+import {
+  to = github_repository_vulnerability_alerts.this
+  id = var.name
+}
+resource "github_repository_vulnerability_alerts" "this" {
+  repository = github_repository.this.name
+  enabled    = true
 }
 
 resource "github_actions_repository_permissions" "this" {
